@@ -6,6 +6,14 @@
       @if (movies && movies.length > 0) {
         @for (movie of movies; track movie.id) {
           <div>
+            <figure>
+              <img
+                [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+                [alt]="movie.title"
+                width="250"
+                height="400"
+              />
+            </figure>
             <h3>{{ movie.title }}</h3>
             <p>{{ movie.release_date }}</p>
           </div>
@@ -18,34 +26,3 @@
     }
   </div>
 </div>
-
-
-
-<!-- <ul
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10"
-  >
-    @for(movie of movies$.value().results; track movie.id) {
-    <li>
-      <div class="card bg-base-100 w-96 shadow-sm">
-        <figure>
-          <img
-            [ngSrc]="'/t/p/w500' + movie.poster_path"
-            alt="{{movie.title}}"
-            width="500"
-            height="750"
-            [priority]="$first"
-          />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">{{movie.title}}</h2>
-          <p class="truncate">{{movie.overview}}</p>
-          <div class="card-actions justify-end">
-            <a routerLink="/movie-details/{{movie.id}}" class="btn btn-primary"
-              >Voir plus →</a
-            >
-          </div>
-        </div>
-      </div>
-    </li>
-    }
-  </ul> -->
