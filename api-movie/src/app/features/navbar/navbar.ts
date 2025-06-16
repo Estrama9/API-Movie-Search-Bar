@@ -1,17 +1,12 @@
-import { Component, output } from '@angular/core';
+import { Component} from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
 export class Navbar {
 
-  search = output<string>()
-
-  onInputSearch(event: Event): void {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.search.emit(inputValue);
-  }
 }

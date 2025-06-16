@@ -1,25 +1,14 @@
-<nav class="flex items-center justify-center bg-violet-500 p-5">
-  <ul class="flex">
+<nav class="flex flex-col gap-3 items-center justify-center text-white text-3xl bg-violet-500 p-5">
+  <ul class="flex gap-10 items-center justify-center">
     <li>
-      <div class="relative w-full max-w-md">
-        <input (input)="onInputSearch($event)"
-          type="text"
-          id="search"
-          placeholder=" "
-          class="peer w-full px-5 py-4 bg-gray-50 border border-gray-300 rounded-xl
-                focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent
-                placeholder-transparent"
-        />
-        <label
-          for="search"
-          class="absolute !top-4 left-12 text-gray-400 text-sm transition-all !bg-transparent
-                peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:!top-[1px] peer-focus:left-[2px] peer-focus:bg-transparent peer-focus:text-blue-500 peer-focus:text-sm
-                bg-white px-1"
-        >
-          Search movie...
-        </label>
-      </div>
+      <a routerLink="/">POPULAR MOVIES</a>
+    </li>
+    <li>
+      <a routerLink="/movies/overview">OVERVIEWS</a>
+    </li>
+    <li>
+      <a routerLink="/movies/rating">TOP RATINGS</a>
     </li>
   </ul>
+  <ng-content></ng-content>
 </nav>

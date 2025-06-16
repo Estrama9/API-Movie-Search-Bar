@@ -3,9 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of, map } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Movie } from '../interfaces/Movie';
+import { MovieDetailsId } from '../interfaces/MovieId';
 
 const API_KEY = environment.TMDB_API_KEY
 const BASE_URL = 'https://api.themoviedb.org/3/discover/movie';
+const BASE_URL_ID = 'https://api.themoviedb.org/3/movie'
+
 
 
 @Injectable({
@@ -24,4 +27,12 @@ export class MovieService {
       })
     );
   }
+
+  getMovieById(id: number): Observable<MovieDetailsId> {
+    const url = `${BASE_URL_ID}/${id}?api_key=${API_KEY}&language=en-US`;
+    return this.http.get<MovieDetailsId>(url);
+
+}
+
+
 }
